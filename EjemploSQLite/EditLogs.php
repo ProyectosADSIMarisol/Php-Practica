@@ -1,5 +1,5 @@
 <?php
-require_once "crudAutomoviles.php"; 
+require_once "crudLogs.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ require_once "crudAutomoviles.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Editar - ConfigUsuarios</title>
+    <title>Agregar - Logs</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -162,11 +162,11 @@ require_once "crudAutomoviles.php";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Editar ConfigUsuario
+                            Editar Logs
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">ConfigUsuario</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Post</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Editar
@@ -178,37 +178,96 @@ require_once "crudAutomoviles.php";
 
                 <?php if(empty($_GET['id'])){ ?>
                     <div class="alert alert-danger">
-                        <strong>Error!</strong> No se encontro ConfigUsuario al que aplicar esta accion.
+                        <strong>Error!</strong> No se encontro un logs al que aplicar esta accion.
                     </div>
                 <?php }else{ ?>
 
                 <?php
-                    $_SESSION['idAutomovil'] = $_GET['id'];
-                    $arrAutomovil = getAutomovil($_SESSION['idAutomovil']);
+                    $_SESSION['idLogs'] = $_GET['id'];
+                    $arrUser = getUser($_SESSION['idLog']);
                 ?>
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmEditAuto" method="post" action="crudAutomoviles.php?action=update">
+
+                        <form role="form" id="frmUser" method="post" action="crudLogs.php?action=update">
                             <div class="form-group">
+                               
+
+                                <label>Utc</label>
+                                <input id="Utc" name="Utc" class="form-control" value="<?php echo $arrUser['Utc']; ?>" placeholder="Utc">
+                                <p class="help-block">Utc.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Anio</label>
+                                <input id="Anio" name="Anio" class="form-control" value="<?php echo $arrUser['Anio']; ?>" placeholder="Anio">
+                                <p class="help-block">Anio.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mes</label>
+                                <input id="Mes" name="Mes" class="form-control" value="<?php echo $arrUser['Mes']; ?>" placeholder="Mes">
+                                <p class="help-block">Mes.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Dia</label>
+                                <input id="Dia" name="Dia" class="form-control" value="<?php echo $arrUser['Dia']; ?>" placeholder="Dia">
+                                <p class="help-block">Dia.</p>
+                            </div>
+
+<div class="form-group">
+                            
+
+
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <input id="Hora" name="Hora" class="form-control" value="<?php echo $arrUser['Hora']; ?>" placeholder="Hora">
+                                <p class="help-block">Hora.</p>
+                            </div>
+
+
+
+                    
+
+
+                             <div class="form-group">
+                                <label>Segundo</label>
+                                <input id="Segundo" name="Segundo" class="form-control" value="<?php echo $arrUser['Segundo']; ?>" placeholder="Segundo">
+                                <p class="help-block">Segundo.</p>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label>Ip</label>
+                                <input id="Ip" name="Ip" class="form-control" value="<?php echo $arrUser['Ip']; ?>" placeholder="SubTitulo">
+                                <p class="help-block">Ip.</p>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label>Navegador</label>
+                                <input id="Navegador" name="Navegador" class="form-control" value="<?php echo $arrUser['Navegador']; ?>" placeholder="Navegador">
+                                <p class="help-block">Navegador.</p>
+                            </div>
+
+
+                             <div class="form-group">
                                 <label>Usuario</label>
-                                <input id="usuario" name="usuario" class="form-control" value="<?php echo $arrAutomovil['Usuario']; ?>" placeholder="Marca Auto">
+                                <input id="Usuario" name="Usuario" class="form-control" value="<?php echo $arrUser['Usuario']; ?>" placeholder="Usuario">
                                 <p class="help-block">Usuario.</p>
                             </div>
-
-                            <div class="form-group">
-                                <label>Piel</label>
-                                <input id="piel" name="piel" class="form-control" value="<?php echo $arrAutomovil['Piel']; ?>" placeholder="Modelo Auto">
-                                <p class="help-block">Piel.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Respuesta</label>
-                                <input id="respuestas" name="respuestas" class="form-control" value="<?php echo $arrAutomovil['Respuestas']; ?>" placeholder="Color Auto">
-                                <p class="help-block">Respuesta.</p>
+                             <div class="form-group">
+                                <label>Operador</label>
+                                <input id="Operador" name="Operador" class="form-control" value="<?php echo $arrUser['Operador']; ?>" placeholder="Operador">
+                                <p class="help-block">Imagen.</p>
                             </div>
 
                             
+
+
+
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>
 

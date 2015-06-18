@@ -94,7 +94,7 @@
 		);
 
 		/* Preparamos el query apartir del array $params*/
-		$query ='UPDATE Usuarios SET
+		$query ='UPDATE Usuario SET
 					Nombres = :nombres,
 					Apellidos = :apellidos,
 					Titulo = :titulo,
@@ -107,7 +107,7 @@
 				 WHERE idUsuario = :idUser;
 				';
 
-		$result = excuteQuery("Usuarios", "", $query, $params);
+		$result = excuteQuery("Blog", "", $query, $params);
 		if ($result > 0){
 			unset($_SESSION['idUser']);
 			$_SESSION['idUser'] = NULL;
@@ -127,10 +127,10 @@
 		);
 
 		/* Preparamos el query apartir del array $params*/
-		$query ='DELETE FROM Usuarios
+		$query ='DELETE FROM Usuario
 				 WHERE idUsuario = :id;';
 
-		$result = excuteQuery("Usuarios", "", $query, $params);
+		$result = excuteQuery("Blog", "", $query, $params);
 		if ($result > 0){
 			header('Location: viewUsers.php?result=true');
 		}else{

@@ -1,5 +1,5 @@
 <?php
-require_once "crudAutomoviles.php"; 
+require_once "crudPosts.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ require_once "crudAutomoviles.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Editar - ConfigUsuarios</title>
+    <title>Agregar - Usuario</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -162,11 +162,11 @@ require_once "crudAutomoviles.php";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Editar ConfigUsuario
+                            Editar Post
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">ConfigUsuario</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Post</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Editar
@@ -178,37 +178,113 @@ require_once "crudAutomoviles.php";
 
                 <?php if(empty($_GET['id'])){ ?>
                     <div class="alert alert-danger">
-                        <strong>Error!</strong> No se encontro ConfigUsuario al que aplicar esta accion.
+                        <strong>Error!</strong> No se encontro un Post al que aplicar esta accion.
                     </div>
                 <?php }else{ ?>
 
                 <?php
-                    $_SESSION['idAutomovil'] = $_GET['id'];
-                    $arrAutomovil = getAutomovil($_SESSION['idAutomovil']);
+                    $_SESSION['idPosts'] = $_GET['id'];
+                    $arrUser = getUser($_SESSION['idPosts']);
                 ?>
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmEditAuto" method="post" action="crudAutomoviles.php?action=update">
+
+                        <form role="form" id="frmUser" method="post" action="crudPosts.php?action=update">
                             <div class="form-group">
-                                <label>Usuario</label>
-                                <input id="usuario" name="usuario" class="form-control" value="<?php echo $arrAutomovil['Usuario']; ?>" placeholder="Marca Auto">
-                                <p class="help-block">Usuario.</p>
+                               
+
+                                <label>Utc</label>
+                                <input id="Utc" name="Utc" class="form-control" value="<?php echo $arrUser['Utc']; ?>" placeholder="Utc">
+                                <p class="help-block">Utc.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Piel</label>
-                                <input id="piel" name="piel" class="form-control" value="<?php echo $arrAutomovil['Piel']; ?>" placeholder="Modelo Auto">
-                                <p class="help-block">Piel.</p>
+                                <label>Anio</label>
+                                <input id="Anio" name="Anio" class="form-control" value="<?php echo $arrUser['Anio']; ?>" placeholder="Anio">
+                                <p class="help-block">Anio.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Respuesta</label>
-                                <input id="respuestas" name="respuestas" class="form-control" value="<?php echo $arrAutomovil['Respuestas']; ?>" placeholder="Color Auto">
-                                <p class="help-block">Respuesta.</p>
+                                <label>Mes</label>
+                                <input id="Mes" name="Mes" class="form-control" value="<?php echo $arrUser['Mes']; ?>" placeholder="Mes">
+                                <p class="help-block">Mes.</p>
                             </div>
+
+                            <div class="form-group">
+                                <label>Dia</label>
+                                <input id="Dia" name="Dia" class="form-control" value="<?php echo $arrUser['Dia']; ?>" placeholder="Dia">
+                                <p class="help-block">Dia.</p>
+                            </div>
+
+<div class="form-group">
+                            
+
+
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <input id="Hora" name="Hora" class="form-control" value="<?php echo $arrUser['Hora']; ?>" placeholder="Hora">
+                                <p class="help-block">Hora.</p>
+                            </div>
+
+
 
                             
+                                
+
+
+                            <div class="form-group">
+                                <label>Segundo</label>
+                                <input id="Segundo" name="Segundo" class="form-control" value="<?php echo $arrUser['Segundo']; ?>" placeholder="Segundo">
+                                <p class="help-block">Segundo.</p>
+                            </div>
+
+                             <div class="form-group">
+                                <label>Titulo</label>
+                                <input id="Titulo" name="Titulo" class="form-control" value="<?php echo $arrUser['Titulo']; ?>" placeholder="Titulo">
+                                <p class="help-block">Titulo.</p>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label>SubTitulo</label>
+                                <input id="SubTitulo" name="SubTitulo" class="form-control" value="<?php echo $arrUser['SubTitulo']; ?>" placeholder="SubTitulo">
+                                <p class="help-block">SubTitulo.</p>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label>Icono</label>
+                                <input id="Icono" name="Icono" class="form-control" value="<?php echo $arrUser['Icono']; ?>" placeholder="Icono">
+                                <p class="help-block">Icono.</p>
+                            </div>
+
+
+                             <div class="form-group">
+                                <label>Texto</label>
+                                <input id="Texto" name="Texto" class="form-control" value="<?php echo $arrUser['Texto']; ?>" placeholder="Texto">
+                                <p class="help-block">Texto.</p>
+                            </div>
+                             <div class="form-group">
+                                <label>Imagen</label>
+                                <input id="Imagen" name="Imagen" class="form-control" value="<?php echo $arrUser['Imagen']; ?>" placeholder="Imagen">
+                                <p class="help-block">Imagen.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Video</label>
+                                <input id="Video" name="Video" class="form-control" value="<?php echo $arrUser['Video']; ?>" placeholder="Video">
+                                <p class="help-block">Video.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Sonido</label>
+                                <input id="Sonido" name="Sonido" class="form-control" value="<?php echo $arrUser['Sonido']; ?>" placeholder="Sonido">
+                                <p class="help-block">Sonido.</p>
+                            </div>
+
+
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>
 

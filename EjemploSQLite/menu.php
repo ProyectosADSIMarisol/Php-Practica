@@ -8,13 +8,13 @@
                         <a href="viewUsers.php"><i class="fa fa-fw fa-bar-chart-o"></i> Usuarios</a>
                     </li>
                     <li>
-                        <a href="viewAutomoviles.php"><i class="fa fa-fw fa-table"></i> Automoviles</a>
+                        <a href="viewAutomoviles.php"><i class="fa fa-fw fa-table"></i> ConfiUsuarios</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="ViewPosts.php"><i class="fa fa-fw fa-edit"></i> Posts</a>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="ViewLogs.php"><i class="fa fa-fw fa-desktop"></i> Logs</a>
                     </li>
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>

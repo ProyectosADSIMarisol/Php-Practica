@@ -1,6 +1,3 @@
-<?php
-require_once "crudAutomoviles.php"; 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +9,7 @@ require_once "crudAutomoviles.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Editar - ConfigUsuarios</title>
+    <title>Agregar - Posts</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -75,7 +72,7 @@ require_once "crudAutomoviles.php";
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Marisol Daza</strong>
+                                        <h5 class="media-heading"><strong>JMarisol Daza</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -162,53 +159,105 @@ require_once "crudAutomoviles.php";
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Editar ConfigUsuario
+                            Agregar Post
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">ConfigUsuario</a>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Post</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-edit"></i> Editar
+                                <i class="fa fa-edit"></i> Agregar
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php if(empty($_GET['id'])){ ?>
-                    <div class="alert alert-danger">
-                        <strong>Error!</strong> No se encontro ConfigUsuario al que aplicar esta accion.
-                    </div>
-                <?php }else{ ?>
-
-                <?php
-                    $_SESSION['idAutomovil'] = $_GET['id'];
-                    $arrAutomovil = getAutomovil($_SESSION['idAutomovil']);
-                ?>
                 <div class="row">
                     <div class="col-lg-8">
 
-                        <form role="form" id="frmEditAuto" method="post" action="crudAutomoviles.php?action=update">
+                        <form role="form" id="frmUser" method="post" action="crudPosts.php?action=crear">
                             <div class="form-group">
-                                <label>Usuario</label>
-                                <input id="usuario" name="usuario" class="form-control" value="<?php echo $arrAutomovil['Usuario']; ?>" placeholder="Marca Auto">
-                                <p class="help-block">Usuario.</p>
+                                <label>Utc</label>
+                                <input id="Utc" name="Utc" class="form-control" placeholder="12345">
+                                <p class="help-block">Utc.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Piel</label>
-                                <input id="piel" name="piel" class="form-control" value="<?php echo $arrAutomovil['Piel']; ?>" placeholder="Modelo Auto">
-                                <p class="help-block">Piel.</p>
+                                <label>Anio</label>
+                                <input id="Anio" name="Anio" class="form-control" placeholder="2015">
+                                <p class="help-block">Anio.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Respuesta</label>
-                                <input id="respuestas" name="respuestas" class="form-control" value="<?php echo $arrAutomovil['Respuestas']; ?>" placeholder="Color Auto">
-                                <p class="help-block">Respuesta.</p>
+                                <label>Mes</label>
+                                <input id="Mes" name="Mes" class="form-control" placeholder="06">
+                                <p class="help-block">Mes.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Dia</label>
+                                <input id="Dia" name="Dia" class="form-control" placeholder="14">
+                                <p class="help-block">Dia.</p>
                             </div>
 
                             
+                            <div class="form-group">
+                                <label>Hora</label>
+                                <input id="Hora" name="Hora" class="form-control" placeholder="13">
+                                <p class="help-block">Hora.</p>
+                            </div>
+
+     <div class="form-group">
+                                <label>Segundo</label>
+                                <input id="Segundo" name="Segundo" class="form-control" placeholder="08">
+                                <p class="help-block">Segundo.</p>
+                            </div>
+
+
+     <div class="form-group">
+                                <label>Titulo</label>
+                                <input id="Titulo" name="Titulo" class="form-control" placeholder="Titulo">
+                                <p class="help-block">Titulo.</p>
+                            </div>
+
+
+     <div class="form-group">
+                                <label>Subtitulo</label>
+                                <input id="SubTitulo" name="SubTitulo" class="form-control" placeholder="Subtitulo">
+                                <p class="help-block">Subtitulo.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Icono</label>
+                                <input id="Icono" name="Icono" class="form-control" placeholder="Icono">
+                                <p class="help-block">Icono.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Texto</label>
+                                <input id="Texto" name="Texto" class="form-control" placeholder="Texto">
+                                <p class="help-block">Texto.</p>
+                            </div>
+
+                             <div class="form-group">
+                                <label>Imagen</label>
+                                <input id="Imagen" name="Imagen" class="form-control" placeholder="Imagen">
+                                <p class="help-block">Imagen.</p>
+                            </div>
+                             <div class="form-group">
+                                <label>Video</label>
+                                <input id="Video" name="Video" class="form-control" placeholder="Video">
+                                <p class="help-block">Video.</p>
+                            </div>
+                             <div class="form-group">
+                                <label>Sonido</label>
+                                <input id="Sonido" name="Sonido" class="form-control" placeholder="Sonido">
+                                <p class="help-block">SONIDO.</p>
+                            </div>
+
+
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>
 
@@ -217,10 +266,6 @@ require_once "crudAutomoviles.php";
                     </div>
 
                 </div>
-
-                <?php } ?>
-
-
                 <!-- /.row -->
 
             </div>

@@ -10,9 +10,9 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Diego Ojeada</strong>
+                                        <h5 class="media-heading"><strong>Marisol Daza B</strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Ayer a las 4:32 PM</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Miercoles a las 23:40 PM</p>
                                         <p>Hola mundo como me va.... Mal</p>
                                     </div>
                                 </div>
@@ -25,9 +25,9 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>Diego Ojeda</strong>
+                                        <h5 class="media-heading"><strong>DMarisol Daza B</strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Ayer a las 4:32 PM</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Miercoles a las 23:40 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Diego Ojeda <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Marisol Daza B <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>

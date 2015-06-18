@@ -189,38 +189,69 @@ require_once "crudUser.php";
                 <div class="row">
                     <div class="col-lg-8">
 
+
                         <form role="form" id="frmUser" method="post" action="crudUser.php?action=update">
                             <div class="form-group">
+                               
+
                                 <label>Nombres</label>
-                                <input id="nombres" name="nombres" class="form-control" value="<?php echo $arrUser['Nombres']; ?>" placeholder="Nombres Usuario">
+                                <input id="Nombres" name="Nombres" class="form-control" value="<?php echo $arrUser['Nombres']; ?>" placeholder="Nombres">
                                 <p class="help-block">Nombres completos del usuario.</p>
                             </div>
 
                             <div class="form-group">
                                 <label>Apellidos</label>
-                                <input id="apellidos" name="apellidos" class="form-control" value="<?php echo $arrUser['Apellidos']; ?>" placeholder="Apellidos Usuario">
+                                <input id="Apellidos" name="Apellidos" class="form-control" value="<?php echo $arrUser['Apellidos']; ?>" placeholder="Apellidos">
                                 <p class="help-block">Apellidos completos del usuario.</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Direccion</label>
-                                <input id="direccion" name="direccion" class="form-control" value="<?php echo $arrUser['Direccion']; ?>" placeholder="Direccion Usuario">
-                                <p class="help-block">Direccion donde vive el usuario.</p>
+                                <label>Titulo</label>
+                                <input id="Titulo" name="Titulo" class="form-control" value="<?php echo $arrUser['Titulo']; ?>" placeholder="Titulo">
+                                <p class="help-block">Titulo..</p>
                             </div>
 
                             <div class="form-group">
-                                <label>Telefono</label>
-                                <input id="telefono" name="telefono" class="form-control" value="<?php echo $arrUser['Telefono']; ?>" placeholder="31XXXXXXX">
-                                <p class="help-block">Telefono donde vive el usuario.</p>
+                                <label>Descripcion</label>
+                                <input id="Descripcion" name="Descripcion" class="form-control" value="<?php echo $arrUser['Descripcion']; ?>" placeholder="Descripcion">
+                                <p class="help-block">Descripcion.</p>
                             </div>
 
+<div class="form-group">
+                            
+
+
                             <div class="form-group">
-                                <label>Estado</label>
-                                <select id="estado" name="estado" class="form-control">
-                                    <option <?php echo ($arrUser['Estado'] == 'Activo') ? "selected='true'" : "" ?>value="Activo">Activo</option>
-                                    <option <?php echo ($arrUser['Estado'] == 'Inactivo') ? "selected='true'" : "" ?>value="Inactivo">Inactivo</option>
-                                </select>
+                                <label>Foto</label>
+                                <input id="Foto" name="Foto" class="form-control" value="<?php echo $arrUser['Foto']; ?>" placeholder="Foto">
+                                <p class="help-block">Foto que desees..</p>
                             </div>
+
+
+
+                            
+                             <div class="form-group">
+                                <label>Web personal</label>
+                                <input id="Webpersonal" name="Webpersonal" class="form-control" value="<?php echo $arrUser['Webpersonal']; ?>" placeholder="Web personal">
+                                <p class="help-block">Web personal.</p>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input id="Email" name="Email" class="form-control" value="<?php echo $arrUser['Email']; ?>" placeholder="Email">
+                                <p class="help-block">Email.</p>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label>Permisos</label>
+                                <input id="Permisos" name="Permisos" class="form-control" value="<?php echo $arrUser['Permisos']; ?>" placeholder="Permisos">
+                                <p class="help-block">Permisos.</p>
+                            </div>
+
 
                             <button type="submit" class="btn btn-default">Enviar</button>
                             <button type="reset" class="btn btn-default">Limpiar</button>

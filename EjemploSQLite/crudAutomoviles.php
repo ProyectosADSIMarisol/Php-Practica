@@ -19,21 +19,20 @@
 	function crearAutomovil(){
 		/* Proteccion de Datos */
 		$params = array(
-			':marca' => $_POST['marca'],
-			':modelo' => $_POST['modelo'],
-			':color' => $_POST['color'],
-			':placa' => $_POST['placa'],
-			':estado' => $_POST['estado'],
+			':usuario' => $_POST['Usuario'],
+			':piel' => $_POST['Piel'],
+			':respuestas' => $_POST['Respuestas'],
+		
 		);
 
 		/* Preparamos el query apartir del array $params*/
 		$query = 'INSERT INTO 
-					Automovil (Marca,Modelo,Color,Placa,Estado)
+					 ConfigUsuario(Usuario,Piel,Respuestas)
 				VALUES
-					(:marca,:modelo,:color,:placa,:estado)';
+					(:usuario,:piel,:respuestas)';
 
 		/* Ejecutamos el query con los parametros */
-		$result = excuteQuery("Usuarios","", $query, $params);
+		$result = excuteQuery("Blog","", $query, $params);
 		if ($result > 0){
 			header('Location: viewAutomoviles.php?result=true');
 		}else{
@@ -42,17 +41,15 @@
 	}
 
 	function verAutomovil (){
-		$query = "SELECT * FROM Automovil";
-		$result = newQuery("Usuarios", "", $query);
+		$query = "SELECT * FROM ConfigUsuario";
+		$result = newQuery("Blog", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				echo "<tr>";
-				echo "    <td>".$value['idAutomovil']."</td>";
-				echo "    <td>".$value['Marca']."</td>";
-				echo "    <td>".$value['Modelo']."</td>";
-				echo "    <td>".$value['Color']."</td>";
-				echo "    <td>".$value['Placa']."</td>";
-				echo "    <td>".$value['Estado']."</td>";
+				echo "    <td>".$value['idConfigUsuario']."</td>";
+				echo "    <td>".$value['Usuario']."</td>";
+				echo "    <td>".$value['Piel']."</td>";
+				echo "    <td>".$value['Respuestas']."</td>";
 				echo "</tr>";
 			}
 		}else{
@@ -61,8 +58,8 @@
 	}
 
 	function getAutomovil($id){
-		$query = "SELECT * FROM Automovil WHERE idAutomovil = '".$id."'";
-		$result = newQuery("Usuarios", "", $query);
+		$query = "SELECT * FROM ConfigUsuario WHERE idConfigUsuario = '".$id."'";
+		$result = newQuery("Blog", "", $query);
 		if ($result != false || $result > 0){
 			foreach ($result as $value) {
 				return $value;
@@ -76,29 +73,27 @@
 
 		/* Proteccion de Datos */
 		$params = array(
-			':idAutomovil' => $_SESSION['idAutomovil'],
-			':marca' => $_POST['marca'],
-			':modelo' => $_POST['modelo'],
-			':color' => $_POST['color'],
-			':placa' => $_POST['placa'],
-			':estado' => $_POST['estado'],
+			':idConfigUsuario' => $_SESSION['idConfigUsuario'],
+			':usuario' => $_POST['usuario'],
+			':piel' => $_POST['piel'],
+			':respuestas' => $_POST['respuestas'],
+			
 		);
 
 		/* Preparamos el query apartir del array $params*/
-		$query ='UPDATE Automovil SET
-					Marca = :marca,
-					Modelo = :modelo,
-					Color = :color,
-					Placa = :placa,
-					Estado = :estado  
-				 WHERE idAutomovil= :idAutomovil;
+		$query ='UPDATE ConfigUsuario SET
+					Usuario = :usuario,
+					Piel = :piel,
+					Respuestas = :respuestas
+					
+				 WHERE idConfigUsuario= :idConfigUsuario;
 				';
 
-		$result = excuteQuery("Usuarios", "", $query, $params);
+		$result = excuteQuery("Blog", "", $query, $params);
 		if ($result > 0){
 			unset($_SESSION['idAutomovil']);
 			$_SESSION['idAutomovil'] = NULL;
-			header('Location: viewAutomoviles.php?result=true');
+			header('Location: viewConfigUsuario.php?result=true');
 		}else{
 			header('Location: editAutomovil.php?result=false');
 		}
@@ -106,7 +101,7 @@
 
 	function deleteAutomovil (){
 
-		$idAutomovil = $_GET['id'];
+		$idConfigUsuario = $_GET['id'];
 
 		/* Proteccion de Datos */
 		$params = array(
@@ -114,14 +109,14 @@
 		);
 
 		/* Preparamos el query apartir del array $params*/
-		$query ='DELETE FROM Automovil
-				 WHERE idAutomovil = :id;';
+		$query ='DELETE FROM ConfigUsuario
+				 WHERE idConfigUsuario = :id;';
 
-		$result = excuteQuery("Usuarios", "", $query, $params);
+		$result = excuteQuery("Blog", "", $query, $params);
 		if ($result > 0){
-			header('Location: viewAutomoviles.php?result=true');
+			header('Location: viewConfigUsuario.php?result=true');
 		}else{
-			header('Location: viewAutomoviles.php?result=false');
+			header('Location: viewConfigUsuario.php?result=false');
 		}
 	}
 

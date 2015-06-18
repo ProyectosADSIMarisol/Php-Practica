@@ -1,4 +1,4 @@
-<?php require_once "crudAutomoviles.php"; ?>
+<?php require_once "crudLogs.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin - ConfiUsuarios</title>
+    <title>Admin - Logs</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin ConfiUsuario</a>
+                <a class="navbar-brand" href="index.html">Admin Logs</a>
             </div>
 
             <?php include_once "menuitems.php" ?>
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Administracion <small>de ConfiUsuario</small>
+                            Administracion <small>de Logs</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -78,7 +78,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-car fa-fw"></i> ConfiUsuario</h3>
+                                <h3 class="panel-title"><i class="fa fa-car fa-fw"></i> Logs</h3>
                             </div>
                             <div class="panel-body">
                                 
@@ -86,15 +86,23 @@
                             <thead>
                                 <tr>
                                     <th data-column-id="id" data-align="left" data-width="40px" data-type="numeric" data-order="asc">ID</th>
-                                    <th data-column-id="usuario" data-width="25%" data-align="left" data-header-align="center">Usuario</th>
-                                    <th data-column-id="piel" data-width="25%">Piel</th>
-                                    <th data-column-id="respuestas" data-width="20%">Respuesta</th>
+                                    <th data-column-id="utc" data-width="25%" data-align="left" data-header-align="center">Utc</th>
+                                    <th data-column-id="anio" data-width="25%">Anio</th>
+                                    <th data-column-id="mes" data-width="25%">Mes</th>
+                                    <th data-column-id="dia" data-width="25%">Dia</th>
+                                    <th data-column-id="hora" data-width="25%">Hora</th>
+                                    <th data-column-id="segundo" data-width="25%">Segundo</th>
+                                    <th data-column-id="ip" data-width="25%">Ip</th>
+                                    <th data-column-id="navegador" data-width="25%">Navegador</th>
+                                    <th data-column-id="usuario" data-width="20%">Usuario</th>
+                                    <th data-column-id="operador" data-width="20%">Operador</th>
+                                 
                                 
                                     <th data-column-id="actions" align="center" data-formatter="actions" data-width="100px">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php echo verAutomovil(); ?>
+                                <?php echo verLogs(); ?>
                             </tbody>
                         </table>
 
@@ -102,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <a type="button" href="addAutomovil.php" class="btn btn-primary pull-right"><i class="fa fa-plus fa-fw"></i> Agregar</a>
+                <a type="button" href="addPosts.php" class="btn btn-primary pull-right"><i class="fa fa-plus fa-fw"></i> Agregar</a>
 
                 
 
@@ -133,8 +141,8 @@
                 formatters: {
                     "actions": function(column, row)
                     {
-                        return "<a href=\"editAutomovil.php?id="+row.id+"\"><i class='fa fa-pencil fa-fw'></i></a> "+
-                        " <a href=\"crudAutomoviles.php?id="+row.id+"&action=delete\"><i class='fa fa-minus-circle fa-fw'></i></a>";
+                        return "<a href=\"editPosts.php?id="+row.id+"\"><i class='fa fa-pencil fa-fw'></i></a> "+
+                        " <a href=\"crudPosts.php?id="+row.id+"&action=delete\"><i class='fa fa-minus-circle fa-fw'></i></a>";
                     }
                 },
                 rowCount: [-1, 25, 50, 75]
