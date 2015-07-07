@@ -78,7 +78,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-car fa-fw"></i> Logs</h3>
+                                <h3 class="panel-title"><i class="fa fa-user-plus"></i> Logs</h3>
                             </div>
                             <div class="panel-body">
                                 
